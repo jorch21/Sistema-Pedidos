@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServiciosWCF.Interfaces" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServiciosWCF.Interfaces" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dniusuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idrol" type="xs:int" />
+      <xs:element minOccurs="0" name="idusuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombrerol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nomusuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
+  <xs:complexType name="Cliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dnicliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idcliente" type="xs:int" />
+      <xs:element minOccurs="0" name="iddistrito" type="xs:int" />
+      <xs:element minOccurs="0" name="nomcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:complexType name="Motorizado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dnimot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idmotorizado" type="xs:int" />
+      <xs:element minOccurs="0" name="marca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="matricula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="modelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombremot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nrolicencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipolicencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipovehiculo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Motorizado" nillable="true" type="tns:Motorizado" />
+  <xs:complexType name="Plato">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idmenu" type="xs:int" />
+      <xs:element minOccurs="0" name="nombremenu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="preciomenu" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Plato" nillable="true" type="tns:Plato" />
+  <xs:complexType name="Pedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="idcliente" type="xs:int" />
+      <xs:element minOccurs="0" name="idpedido" type="xs:int" />
+      <xs:element minOccurs="0" name="idplato" type="xs:int" />
+      <xs:element minOccurs="0" name="idusuario" type="xs:int" />
+      <xs:element minOccurs="0" name="igv" type="xs:float" />
+      <xs:element minOccurs="0" name="subtotal" type="xs:float" />
+      <xs:element minOccurs="0" name="totalpedido" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pedido" nillable="true" type="tns:Pedido" />
+  <xs:complexType name="Asignacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idmotorizado" type="xs:int" />
+      <xs:element minOccurs="0" name="idpedido" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Asignacion" nillable="true" type="tns:Asignacion" />
+  <xs:complexType name="Historial">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idmotorizado" type="xs:int" />
+      <xs:element minOccurs="0" name="idpedido" type="xs:int" />
+      <xs:element minOccurs="0" name="nota" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Historial" nillable="true" type="tns:Historial" />
+</xs:schema>

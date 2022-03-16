@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50559/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50559/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50559/Service1.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://localhost:50559/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ServiciosWCF.Interfaces" />
+      <xsd:import schemaLocation="http://localhost:50559/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUsuarios_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_LISTAUSUARIOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAUSUARIOS" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_LISTAUSUARIOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAUSUARIOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_LISTAROLES_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAROLES" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_LISTAROLES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAROLESResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_NUEVOUSUARIO_InputMessage">
+    <wsdl:part name="parameters" element="tns:NUEVOUSUARIO" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_NUEVOUSUARIO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NUEVOUSUARIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_ACTUALIZAUSUARIO_InputMessage">
+    <wsdl:part name="parameters" element="tns:ACTUALIZAUSUARIO" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_ACTUALIZAUSUARIO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ACTUALIZAUSUARIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_ELIMINAUSUARIO_InputMessage">
+    <wsdl:part name="parameters" element="tns:ELIMINAUSUARIO" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_ELIMINAUSUARIO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ELIMINAUSUARIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_obtenerUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarios_obtenerUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_LISTACLIENTES_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTACLIENTES" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_LISTACLIENTES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTACLIENTESResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_LISTADISTRITOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTADISTRITOS" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_LISTADISTRITOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTADISTRITOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_NUEVOCLIENTE_InputMessage">
+    <wsdl:part name="parameters" element="tns:NUEVOCLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_NUEVOCLIENTE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NUEVOCLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_ACTUALIZACLIENTE_InputMessage">
+    <wsdl:part name="parameters" element="tns:ACTUALIZACLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_ACTUALIZACLIENTE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ACTUALIZACLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_ELIMINACLIENTE_InputMessage">
+    <wsdl:part name="parameters" element="tns:ELIMINACLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_ELIMINACLIENTE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ELIMINACLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_BUSCARCLIENTE_InputMessage">
+    <wsdl:part name="parameters" element="tns:BUSCARCLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="IClientes_BUSCARCLIENTE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BUSCARCLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMotorizados_LISTAMOTORIZADOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAMOTORIZADOS" />
+  </wsdl:message>
+  <wsdl:message name="IMotorizados_LISTAMOTORIZADOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAMOTORIZADOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMotorizados_NUEVOMOTORIZADO_InputMessage">
+    <wsdl:part name="parameters" element="tns:NUEVOMOTORIZADO" />
+  </wsdl:message>
+  <wsdl:message name="IMotorizados_NUEVOMOTORIZADO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NUEVOMOTORIZADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMotorizados_ACTUALIZAMOTORIZADO_InputMessage">
+    <wsdl:part name="parameters" element="tns:ACTUALIZAMOTORIZADO" />
+  </wsdl:message>
+  <wsdl:message name="IMotorizados_ACTUALIZAMOTORIZADO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ACTUALIZAMOTORIZADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMotorizados_ELIMINAMOTORIZADO_InputMessage">
+    <wsdl:part name="parameters" element="tns:ELIMINAMOTORIZADO" />
+  </wsdl:message>
+  <wsdl:message name="IMotorizados_ELIMINAMOTORIZADO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ELIMINAMOTORIZADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMotorizados_LISTADISPONIBLES_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTADISPONIBLES" />
+  </wsdl:message>
+  <wsdl:message name="IMotorizados_LISTADISPONIBLES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTADISPONIBLESResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMenus_LISTAMENUS_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAMENUS" />
+  </wsdl:message>
+  <wsdl:message name="IMenus_LISTAMENUS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAMENUSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMenus_NUEVOMENU_InputMessage">
+    <wsdl:part name="parameters" element="tns:NUEVOMENU" />
+  </wsdl:message>
+  <wsdl:message name="IMenus_NUEVOMENU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NUEVOMENUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMenus_ACTUALIZAMENU_InputMessage">
+    <wsdl:part name="parameters" element="tns:ACTUALIZAMENU" />
+  </wsdl:message>
+  <wsdl:message name="IMenus_ACTUALIZAMENU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ACTUALIZAMENUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMenus_ELIMINAMENU_InputMessage">
+    <wsdl:part name="parameters" element="tns:ELIMINAMENU" />
+  </wsdl:message>
+  <wsdl:message name="IMenus_ELIMINAMENU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ELIMINAMENUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMenus_BUSCARMENU_InputMessage">
+    <wsdl:part name="parameters" element="tns:BUSCARMENU" />
+  </wsdl:message>
+  <wsdl:message name="IMenus_BUSCARMENU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BUSCARMENUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedidos_LISTAPEDIDOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAPEDIDOS" />
+  </wsdl:message>
+  <wsdl:message name="IPedidos_LISTAPEDIDOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAPEDIDOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedidos_LISTAPEDIDOSPENDIENTES_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAPEDIDOSPENDIENTES" />
+  </wsdl:message>
+  <wsdl:message name="IPedidos_LISTAPEDIDOSPENDIENTES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAPEDIDOSPENDIENTESResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedidos_NUEVOPEDIDO_InputMessage">
+    <wsdl:part name="parameters" element="tns:NUEVOPEDIDO" />
+  </wsdl:message>
+  <wsdl:message name="IPedidos_NUEVOPEDIDO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NUEVOPEDIDOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedidos_ELIMINAPEDIDO_InputMessage">
+    <wsdl:part name="parameters" element="tns:ELIMINAPEDIDO" />
+  </wsdl:message>
+  <wsdl:message name="IPedidos_ELIMINAPEDIDO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ELIMINAPEDIDOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAsignaciones_LISTADEASIGNACIONES_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTADEASIGNACIONES" />
+  </wsdl:message>
+  <wsdl:message name="IAsignaciones_LISTADEASIGNACIONES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTADEASIGNACIONESResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAsignaciones_LISTADEASIGNACIONESPENDIENTES_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTADEASIGNACIONESPENDIENTES" />
+  </wsdl:message>
+  <wsdl:message name="IAsignaciones_LISTADEASIGNACIONESPENDIENTES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTADEASIGNACIONESPENDIENTESResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAsignaciones_AGREGARASIGNACION_InputMessage">
+    <wsdl:part name="parameters" element="tns:AGREGARASIGNACION" />
+  </wsdl:message>
+  <wsdl:message name="IAsignaciones_AGREGARASIGNACION_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AGREGARASIGNACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHistoriales_LISTAHISTORIAL_InputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAHISTORIAL" />
+  </wsdl:message>
+  <wsdl:message name="IHistoriales_LISTAHISTORIAL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LISTAHISTORIALResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHistoriales_AGREGARHISTORIAL_InputMessage">
+    <wsdl:part name="parameters" element="tns:AGREGARHISTORIAL" />
+  </wsdl:message>
+  <wsdl:message name="IHistoriales_AGREGARHISTORIAL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AGREGARHISTORIALResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUsuarios">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarios/Login" message="tns:IUsuarios_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarios/LoginResponse" message="tns:IUsuarios_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LISTAUSUARIOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarios/LISTAUSUARIOS" message="tns:IUsuarios_LISTAUSUARIOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarios/LISTAUSUARIOSResponse" message="tns:IUsuarios_LISTAUSUARIOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LISTAROLES">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarios/LISTAROLES" message="tns:IUsuarios_LISTAROLES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarios/LISTAROLESResponse" message="tns:IUsuarios_LISTAROLES_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NUEVOUSUARIO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarios/NUEVOUSUARIO" message="tns:IUsuarios_NUEVOUSUARIO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarios/NUEVOUSUARIOResponse" message="tns:IUsuarios_NUEVOUSUARIO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ACTUALIZAUSUARIO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarios/ACTUALIZAUSUARIO" message="tns:IUsuarios_ACTUALIZAUSUARIO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarios/ACTUALIZAUSUARIOResponse" message="tns:IUsuarios_ACTUALIZAUSUARIO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAUSUARIO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarios/ELIMINAUSUARIO" message="tns:IUsuarios_ELIMINAUSUARIO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarios/ELIMINAUSUARIOResponse" message="tns:IUsuarios_ELIMINAUSUARIO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarios/obtenerUsuario" message="tns:IUsuarios_obtenerUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarios/obtenerUsuarioResponse" message="tns:IUsuarios_obtenerUsuario_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IClientes">
+    <wsdl:operation name="LISTACLIENTES">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientes/LISTACLIENTES" message="tns:IClientes_LISTACLIENTES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientes/LISTACLIENTESResponse" message="tns:IClientes_LISTACLIENTES_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LISTADISTRITOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientes/LISTADISTRITOS" message="tns:IClientes_LISTADISTRITOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientes/LISTADISTRITOSResponse" message="tns:IClientes_LISTADISTRITOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NUEVOCLIENTE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientes/NUEVOCLIENTE" message="tns:IClientes_NUEVOCLIENTE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientes/NUEVOCLIENTEResponse" message="tns:IClientes_NUEVOCLIENTE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ACTUALIZACLIENTE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientes/ACTUALIZACLIENTE" message="tns:IClientes_ACTUALIZACLIENTE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientes/ACTUALIZACLIENTEResponse" message="tns:IClientes_ACTUALIZACLIENTE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINACLIENTE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientes/ELIMINACLIENTE" message="tns:IClientes_ELIMINACLIENTE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientes/ELIMINACLIENTEResponse" message="tns:IClientes_ELIMINACLIENTE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BUSCARCLIENTE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientes/BUSCARCLIENTE" message="tns:IClientes_BUSCARCLIENTE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientes/BUSCARCLIENTEResponse" message="tns:IClientes_BUSCARCLIENTE_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMotorizados">
+    <wsdl:operation name="LISTAMOTORIZADOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotorizados/LISTAMOTORIZADOS" message="tns:IMotorizados_LISTAMOTORIZADOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotorizados/LISTAMOTORIZADOSResponse" message="tns:IMotorizados_LISTAMOTORIZADOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NUEVOMOTORIZADO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotorizados/NUEVOMOTORIZADO" message="tns:IMotorizados_NUEVOMOTORIZADO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotorizados/NUEVOMOTORIZADOResponse" message="tns:IMotorizados_NUEVOMOTORIZADO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ACTUALIZAMOTORIZADO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotorizados/ACTUALIZAMOTORIZADO" message="tns:IMotorizados_ACTUALIZAMOTORIZADO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotorizados/ACTUALIZAMOTORIZADOResponse" message="tns:IMotorizados_ACTUALIZAMOTORIZADO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAMOTORIZADO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotorizados/ELIMINAMOTORIZADO" message="tns:IMotorizados_ELIMINAMOTORIZADO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotorizados/ELIMINAMOTORIZADOResponse" message="tns:IMotorizados_ELIMINAMOTORIZADO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LISTADISPONIBLES">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotorizados/LISTADISPONIBLES" message="tns:IMotorizados_LISTADISPONIBLES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotorizados/LISTADISPONIBLESResponse" message="tns:IMotorizados_LISTADISPONIBLES_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMenus">
+    <wsdl:operation name="LISTAMENUS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMenus/LISTAMENUS" message="tns:IMenus_LISTAMENUS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMenus/LISTAMENUSResponse" message="tns:IMenus_LISTAMENUS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NUEVOMENU">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMenus/NUEVOMENU" message="tns:IMenus_NUEVOMENU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMenus/NUEVOMENUResponse" message="tns:IMenus_NUEVOMENU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ACTUALIZAMENU">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMenus/ACTUALIZAMENU" message="tns:IMenus_ACTUALIZAMENU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMenus/ACTUALIZAMENUResponse" message="tns:IMenus_ACTUALIZAMENU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAMENU">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMenus/ELIMINAMENU" message="tns:IMenus_ELIMINAMENU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMenus/ELIMINAMENUResponse" message="tns:IMenus_ELIMINAMENU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BUSCARMENU">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMenus/BUSCARMENU" message="tns:IMenus_BUSCARMENU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMenus/BUSCARMENUResponse" message="tns:IMenus_BUSCARMENU_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPedidos">
+    <wsdl:operation name="LISTAPEDIDOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedidos/LISTAPEDIDOS" message="tns:IPedidos_LISTAPEDIDOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedidos/LISTAPEDIDOSResponse" message="tns:IPedidos_LISTAPEDIDOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LISTAPEDIDOSPENDIENTES">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedidos/LISTAPEDIDOSPENDIENTES" message="tns:IPedidos_LISTAPEDIDOSPENDIENTES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedidos/LISTAPEDIDOSPENDIENTESResponse" message="tns:IPedidos_LISTAPEDIDOSPENDIENTES_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NUEVOPEDIDO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedidos/NUEVOPEDIDO" message="tns:IPedidos_NUEVOPEDIDO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedidos/NUEVOPEDIDOResponse" message="tns:IPedidos_NUEVOPEDIDO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAPEDIDO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedidos/ELIMINAPEDIDO" message="tns:IPedidos_ELIMINAPEDIDO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedidos/ELIMINAPEDIDOResponse" message="tns:IPedidos_ELIMINAPEDIDO_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAsignaciones">
+    <wsdl:operation name="LISTADEASIGNACIONES">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAsignaciones/LISTADEASIGNACIONES" message="tns:IAsignaciones_LISTADEASIGNACIONES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAsignaciones/LISTADEASIGNACIONESResponse" message="tns:IAsignaciones_LISTADEASIGNACIONES_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LISTADEASIGNACIONESPENDIENTES">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAsignaciones/LISTADEASIGNACIONESPENDIENTES" message="tns:IAsignaciones_LISTADEASIGNACIONESPENDIENTES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAsignaciones/LISTADEASIGNACIONESPENDIENTESResponse" message="tns:IAsignaciones_LISTADEASIGNACIONESPENDIENTES_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AGREGARASIGNACION">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAsignaciones/AGREGARASIGNACION" message="tns:IAsignaciones_AGREGARASIGNACION_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAsignaciones/AGREGARASIGNACIONResponse" message="tns:IAsignaciones_AGREGARASIGNACION_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IHistoriales">
+    <wsdl:operation name="LISTAHISTORIAL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHistoriales/LISTAHISTORIAL" message="tns:IHistoriales_LISTAHISTORIAL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHistoriales/LISTAHISTORIALResponse" message="tns:IHistoriales_LISTAHISTORIAL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AGREGARHISTORIAL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHistoriales/AGREGARHISTORIAL" message="tns:IHistoriales_AGREGARHISTORIAL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHistoriales/AGREGARHISTORIALResponse" message="tns:IHistoriales_AGREGARHISTORIAL_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUsuarios" type="tns:IUsuarios">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IUsuarios/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LISTAUSUARIOS">
+      <soap:operation soapAction="http://tempuri.org/IUsuarios/LISTAUSUARIOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LISTAROLES">
+      <soap:operation soapAction="http://tempuri.org/IUsuarios/LISTAROLES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NUEVOUSUARIO">
+      <soap:operation soapAction="http://tempuri.org/IUsuarios/NUEVOUSUARIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACTUALIZAUSUARIO">
+      <soap:operation soapAction="http://tempuri.org/IUsuarios/ACTUALIZAUSUARIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAUSUARIO">
+      <soap:operation soapAction="http://tempuri.org/IUsuarios/ELIMINAUSUARIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerUsuario">
+      <soap:operation soapAction="http://tempuri.org/IUsuarios/obtenerUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IClientes" type="tns:IClientes">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LISTACLIENTES">
+      <soap:operation soapAction="http://tempuri.org/IClientes/LISTACLIENTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LISTADISTRITOS">
+      <soap:operation soapAction="http://tempuri.org/IClientes/LISTADISTRITOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NUEVOCLIENTE">
+      <soap:operation soapAction="http://tempuri.org/IClientes/NUEVOCLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACTUALIZACLIENTE">
+      <soap:operation soapAction="http://tempuri.org/IClientes/ACTUALIZACLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINACLIENTE">
+      <soap:operation soapAction="http://tempuri.org/IClientes/ELIMINACLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BUSCARCLIENTE">
+      <soap:operation soapAction="http://tempuri.org/IClientes/BUSCARCLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMotorizados" type="tns:IMotorizados">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LISTAMOTORIZADOS">
+      <soap:operation soapAction="http://tempuri.org/IMotorizados/LISTAMOTORIZADOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NUEVOMOTORIZADO">
+      <soap:operation soapAction="http://tempuri.org/IMotorizados/NUEVOMOTORIZADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACTUALIZAMOTORIZADO">
+      <soap:operation soapAction="http://tempuri.org/IMotorizados/ACTUALIZAMOTORIZADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAMOTORIZADO">
+      <soap:operation soapAction="http://tempuri.org/IMotorizados/ELIMINAMOTORIZADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LISTADISPONIBLES">
+      <soap:operation soapAction="http://tempuri.org/IMotorizados/LISTADISPONIBLES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMenus" type="tns:IMenus">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LISTAMENUS">
+      <soap:operation soapAction="http://tempuri.org/IMenus/LISTAMENUS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NUEVOMENU">
+      <soap:operation soapAction="http://tempuri.org/IMenus/NUEVOMENU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACTUALIZAMENU">
+      <soap:operation soapAction="http://tempuri.org/IMenus/ACTUALIZAMENU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAMENU">
+      <soap:operation soapAction="http://tempuri.org/IMenus/ELIMINAMENU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BUSCARMENU">
+      <soap:operation soapAction="http://tempuri.org/IMenus/BUSCARMENU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPedidos" type="tns:IPedidos">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LISTAPEDIDOS">
+      <soap:operation soapAction="http://tempuri.org/IPedidos/LISTAPEDIDOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LISTAPEDIDOSPENDIENTES">
+      <soap:operation soapAction="http://tempuri.org/IPedidos/LISTAPEDIDOSPENDIENTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NUEVOPEDIDO">
+      <soap:operation soapAction="http://tempuri.org/IPedidos/NUEVOPEDIDO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAPEDIDO">
+      <soap:operation soapAction="http://tempuri.org/IPedidos/ELIMINAPEDIDO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IAsignaciones" type="tns:IAsignaciones">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LISTADEASIGNACIONES">
+      <soap:operation soapAction="http://tempuri.org/IAsignaciones/LISTADEASIGNACIONES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LISTADEASIGNACIONESPENDIENTES">
+      <soap:operation soapAction="http://tempuri.org/IAsignaciones/LISTADEASIGNACIONESPENDIENTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AGREGARASIGNACION">
+      <soap:operation soapAction="http://tempuri.org/IAsignaciones/AGREGARASIGNACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IHistoriales" type="tns:IHistoriales">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LISTAHISTORIAL">
+      <soap:operation soapAction="http://tempuri.org/IHistoriales/LISTAHISTORIAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AGREGARHISTORIAL">
+      <soap:operation soapAction="http://tempuri.org/IHistoriales/AGREGARHISTORIAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IUsuarios" binding="tns:BasicHttpBinding_IUsuarios">
+      <soap:address location="http://localhost:50559/Service1.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IClientes" binding="tns:BasicHttpBinding_IClientes">
+      <soap:address location="http://localhost:50559/Service1.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IMotorizados" binding="tns:BasicHttpBinding_IMotorizados">
+      <soap:address location="http://localhost:50559/Service1.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IMenus" binding="tns:BasicHttpBinding_IMenus">
+      <soap:address location="http://localhost:50559/Service1.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPedidos" binding="tns:BasicHttpBinding_IPedidos">
+      <soap:address location="http://localhost:50559/Service1.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IAsignaciones" binding="tns:BasicHttpBinding_IAsignaciones">
+      <soap:address location="http://localhost:50559/Service1.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IHistoriales" binding="tns:BasicHttpBinding_IHistoriales">
+      <soap:address location="http://localhost:50559/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
